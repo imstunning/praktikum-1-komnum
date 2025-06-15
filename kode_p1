@@ -1,0 +1,50 @@
+import matplotlib.pyplot as pilot
+import numpy as np
+
+def f(x):
+    return x**3 - 4*x - 9  
+
+def regula_falsi(a, b, tol=1e-6, max_iter=100):
+    if f(a) * f(b) >= 0:
+        print("f(a) dan f(b) tidak memiliki tanda yang berlawanan. Tidak dapat menjamin akar.")
+        return None
+
+    print(f"{'Iter':<5} {'a':<10} {'b':<10} {'c':<10} {'f(c)':<10}")
+    for i in range(1, max_iter + 1):
+        c = b - (f(b)*(a - b)) / (f(a) - f(b))
+        print(f"{i:<5} {a:<10.6f} {b:<10.6f} {c:<10.6f} {f(c):<10.6f}")
+
+        if abs(f(c)) < tol:
+            print(f"\nAkar ditemukan: {c} setelah {i} iterasi.")
+            return c
+
+        if f(a) * f(c) < 0:
+            b = c
+        else:
+            a = c
+
+    print("Akar tidak ditemukan dalam iterasi maksimum.")
+    return None
+
+def fsPlot(a, b, root=None):
+    x_vals = np.linspace(a, b, 400)
+    y_vals = f(x_vals)
+
+    pilot.figure(figsize=(8, 5))
+    pilot.axhline(0, color='black', linewidth=0.5)
+    pilot.plot(x_vals, y_vals, label='f(x)')
+    if root is not None:
+        pilot.axvline(root, color='red', linestyle='--', label=f'Akar ≈ {root:.6f}')
+    pilot.title('Grafik Fungsi dan Akar ')
+    pilot.xlabel('x')
+    pilot.ylabel('f(x)')
+    pilot.grid(True)
+    pilot.legend()
+    pilot.show()
+
+a = 2
+b = 3
+akar = regula_falsi(a, b)
+if akar:
+    fsPlot(a, b, akar)
+
