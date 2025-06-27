@@ -173,7 +173,7 @@ if akar:
 ```
 - input dan eksekusi program
 
-![output hasil iterasi](https://ibb.co/1ty9HskV)
-![output hasil grafik](https://ibb.co/7B8x32y)
+![output hasil iterasi]([https://ibb.co/1ty9HskV](https://imgur.com/FxPls8R))
+![output hasil grafik]([https://ibb.co/7B8x32y](https://imgur.com/a/SDoPj6M))
     
 ----
