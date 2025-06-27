@@ -84,6 +84,8 @@ if akar:
     import numpy as np
 ```
 - inisialisasi library matplotlib dan numpy
+- matplotlib untuk grafik
+- numpy untuk manipulasi array dan fungsi matematika
 
 ```phyton
     def f(x):
@@ -95,7 +97,7 @@ if akar:
 ```
 - fungsi metode regula falsi
 - a, b adalah batas interval awal
-- tol = toleransi f(c)
+- tol = toleransi error f(c)
 - max_iter = maximal iterasi 
 - 
 ```phyton
@@ -147,7 +149,7 @@ if akar:
     pilot.axhline(0, color='black', linewidth=0.5)
     pilot.plot(x_vals, y_vals, label='f(x)')
 ```
-- untuk membuat kanvas grafik
+- untuk membuat kanvas grafik ukuran 8 x 5
 - membuat garis horizontal
 - menggambar kurva fungsi
 ```phyton
